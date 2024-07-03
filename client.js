@@ -1,9 +1,10 @@
 const net = require("net");
+const { IP, PORT } = require("./constants");
 
 const connect = function () {
   const conn = net.createConnection({
-    host:"localhost",
-    port:50541
+    host:IP,
+    port:PORT
   });
 
   conn.setEncoding("utf-8");
@@ -18,27 +19,6 @@ const connect = function () {
     conn.write("Name: RAG")
   })
   //made a move up function that have interval of 50ms so it keeps going up
-  const moveUp = function() { 
-    conn.write("Move: up")
-    setTimeout(moveUp, 50)
-  }
-  //move down
-  const moveDown = function() { 
-    conn.write("Move: down")
-    setTimeout(moveDown, 50)
-  }
-  //move left
-  const moveleft = function() { 
-    conn.write("Move: left")
-    setTimeout(moveleft, 50)
-  }
-  //move right
-  const moveright = function() { 
-    conn.write("Move: right")
-    setTimeout(moveright, 50)
-  }
-
-  // conn.on("connect", moveUp)
   
   return conn;
 }
