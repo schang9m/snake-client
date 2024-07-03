@@ -17,6 +17,13 @@ const connect = function () {
   conn.on("connect", () => {
     conn.write("Name: RAG")
   })
+  //made a move up function that have interval of 50ms so it keeps going up
+  const moveUp = function() { 
+    conn.write("Move: up")
+    setTimeout(moveUp, 50)
+  }
+  // conn.on("connect", moveUp)
+  
   return conn;
 }
 
