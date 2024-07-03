@@ -28,6 +28,15 @@ const handleUserInput = function (key) {
   } else if (key === "d") {
     movement = setInterval(()=> connection.write("Move: right"), 50)
   }
+  if (key === "1") {
+    connection.write("Say: That was close!")
+  }
+  if (key === "2") {
+    connection.write("Say: Too easy!")
+  }
+  if (key === "3") {
+    connection.write("Say: GG!")
+  }
 };
 
 module.exports = setupInput;
