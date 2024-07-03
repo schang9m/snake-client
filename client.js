@@ -22,6 +22,22 @@ const connect = function () {
     conn.write("Move: up")
     setTimeout(moveUp, 50)
   }
+  //move down
+  const moveDown = function() { 
+    conn.write("Move: down")
+    setTimeout(moveDown, 50)
+  }
+  //move left
+  const moveleft = function() { 
+    conn.write("Move: left")
+    setTimeout(moveleft, 50)
+  }
+  //move right
+  const moveright = function() { 
+    conn.write("Move: right")
+    setTimeout(moveright, 50)
+  }
+
   // conn.on("connect", moveUp)
   
   return conn;
