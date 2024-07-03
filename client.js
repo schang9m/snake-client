@@ -12,7 +12,11 @@ const connect = function () {
     // code that does something when the connection is first established
     console.log(`server says: ${msg}`)
   });
-
+  conn.on("connect",() => console.log('Client: connection established with server'))
+  //send our name after connected
+  conn.on("connect", () => {
+    conn.write("Name: RAG")
+  })
   return conn;
 }
 
